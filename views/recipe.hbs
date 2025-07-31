@@ -50,6 +50,10 @@
             <h2>Edit Recipe</h2>
             <form action="/recipes/{{recipe.id}}/edit" method="POST">
                 <div class="form-group">
+                <!-- Botão de deletar receita -->
+                <form action="/recipes/{{recipe.id}}/delete" method="POST" style="display:inline">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar esta receita?')">Deletar Receita</button>
+                </form>
                     <label for="edit-title">Recipe Title:</label>
                     <input type="text" id="edit-title" name="title" value="{{recipe.title}}" required>
                 </div>
